@@ -1,9 +1,9 @@
-# node-red-contrib-minio
+# node-red-contrib-rabbitmq-bus
 
 [![Platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
-![License](https://img.shields.io/github/license/alpine-code/node-red-contrib-minio.svg)
-![Release](https://img.shields.io/npm/v/node-red-contrib-minio-ac.svg)
-![NPM](https://img.shields.io/npm/dm/node-red-contrib-minio-ac.svg)
-[![Build Status](https://drone.alpine-code.com/api/badges/alpine-code/node-red-contrib-minio/status.svg)](https://drone.alpine-code.com/alpine-code/node-red-contrib-minio)
+![License](https://img.shields.io/github/license/alpine-code/node-red-contrib-rabbitmq-bus.svg)
+![Release](https://img.shields.io/npm/v/node-red-contrib-rabbitmq-bus-ac.svg)
+![NPM](https://img.shields.io/npm/dm/node-red-contrib-rabbitmq-bus-ac.svg)
+[![Build Status](https://drone.alpine-code.com/api/badges/alpine-code/node-red-contrib-rabbitmq-bus/status.svg)](https://drone.alpine-code.com/alpine-code/node-red-contrib-rabbitmq-bus)
 
-This module leverages the [minio-js](https://github.com/minio/minio-js) client library to bring Minio awesomeness to Node-RED!
+This module leverages the [amqplib](https://github.com/squaremo/amqp.node) client library to bring RabbitMQ awesomeness to Node-RED!

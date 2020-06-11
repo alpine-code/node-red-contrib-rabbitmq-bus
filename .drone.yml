@@ -7,7 +7,7 @@ steps:
     image: appleboy/drone-git-push:0.2.0-linux-amd64
     settings:
       branch: master
-      remote: git@github.com:alpine-code/node-red-contrib-minio.git
+      remote: git@github.com:alpine-code/node-red-contrib-rabbitmq-bus.git
       ssh_key:
         from_secret: ssh_private_key
       force: false

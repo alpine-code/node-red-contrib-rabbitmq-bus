@@ -1,51 +1,40 @@
-var Minio = require('minio');
-
-const helpers = require('./helpers');
+const busHelper = require('../util/busHelper');
 
 module.exports = function (RED) {
 
-    function MinioConfigNode(config) {
+    function RabbitMqBusConfigNode(config) {
 
         RED.nodes.createNode(this, config);
         this.name = config.name;
-        this.host = config.host;
-        this.port = parseInt(config.port);
-        this.useSsl = config.useSsl;
+        this.url = config.url;
+        this.namespace = config.namespace;
+        this.app = config.app;
 
         var node = this;
 
         // Prevents a limit being placed on number of event listeners (otherwise max of 10 by default):
         node.setMaxListeners(0);
 
-        node.initialize = function () {
+        node.busInstance = new busHelper.Bus({
+            url: this.url,
+            namespace: this.namespace,
+            app: this.app
+        });
 
-            try {
-
-                this.minioClient = new Minio.Client({
-                    endPoint: this.host,
-                    port: this.port,
-                    useSSL: this.useSsl,
-                    accessKey: this.credentials.accessKey,
-                    secretKey: this.credentials.secretKey
-                });
-
-
-                return this.minioClient;
-            }
-            catch (err) {
-                console.log(err);
-            }
+        node.get = function () {
+            return node.busInstance;
         }
 
-        node.on('close', function () {
-            node.removeAllListeners("minio_status");
+        node.on('close', async function () {
+            return await node.busInstance.close();
         });
     }
 
-    RED.nodes.registerType("minio-config", MinioConfigNode, {
+    RED.nodes.registerType("rabbitmq-bus-config", RabbitMqBusConfigNode, {
         credentials: {
-            accessKey: { type: "text" },
-            secretKey: { type: "password" }
+            url: { type: "text" },
+            namespace: { type: "text" },
+            app: { type: "text" }
         }
     });
 }

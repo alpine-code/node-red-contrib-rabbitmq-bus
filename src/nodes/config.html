@@ -1,15 +1,11 @@
 <script type="text/javascript">
-    RED.nodes.registerType('minio-config', {
+    RED.nodes.registerType('rabbitmq-bus-config', {
         category: 'config',
         defaults: {
-            name: { type: "text", value: "MinIO Instance", required: true },
-            host: { type: "text", required: true },
-            port: { type: "text", equired: false },
-            useSsl: { type: "checkbox", required: false }
-        },
-        credentials: {
-            accessKey: { type: "text" },
-            secretKey: { type: "password" }
+            name: { type: "text", value: "RabbitMQ Instance", required: true },
+            url: { type: "text", required: true },
+            namespace: { type: "text", required: true },
+            app: { type: "text", required: true },
         },
         label: function () {
             return this.name;
@@ -17,29 +13,21 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="minio-config">
+<script type="text/x-red" data-template-name="rabbitmq-bus-config">
     <div class="form-row">
         <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-config-input-name" placeholder="MinIO Host Name">
+        <input type="text" id="node-config-input-name" placeholder="Host Name">
     </div>
     <div class="form-row">
-        <label for="node-config-input-host"><i class="fa fa-server"></i> MinIO Host</label>
-        <input type="text" id="node-config-input-host" placeholder="your.minio-host.com">
+        <label for="node-config-input-url"><i class="fa fa-server"></i> Url</label>
+        <input type="text" id="node-config-input-url" placeholder="your.rabbitmq-host.com">
     </div>
     <div class="form-row">
-        <label for="node-config-input-port"><i class="fa fa-wrench"></i> Port</label>
-        <input type="text" id="node-config-input-port" placeholder="443">
+        <label for="node-config-input-namespace"><i class="fa fa-server"></i> Namespace</label>
+        <input type="text" id="node-config-input-namespace" placeholder="myNamespace">
     </div>
     <div class="form-row">
-        <label for="node-config-input-accessKey"><i class="fa fa-key"></i> Access Key</label>
-        <input type="text" id="node-config-input-accessKey">
-    </div>
-    <div class="form-row">
-        <label for="node-config-input-secretKey"><i class="fa fa-key"></i> Secret Key</label>
-        <input type="password" id="node-config-input-secretKey">
-    </div>
-    <div class="form-row">
-        <label for="node-config-input-useSsl"><i class="fa fa-wrench"></i> Use SSL</label>
-        <input type="checkbox" id="node-config-input-useSsl">
+        <label for="node-config-input-app"><i class="fa fa-server"></i> App</label>
+        <input type="text" id="node-config-input-app" placeholder="myApp">
     </div>
 </script>
