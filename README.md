@@ -7,3 +7,7 @@
 [![Build Status](https://drone.alpine-code.com/api/badges/alpine-code/node-red-contrib-rabbitmq-bus/status.svg)](https://drone.alpine-code.com/alpine-code/node-red-contrib-rabbitmq-bus)
 
 This module leverages the [amqplib](https://github.com/squaremo/amqp.node) client library to bring RabbitMQ awesomeness to Node-RED!
+
+## Credits
+
+The package is developed and maintained by [Alpine Code](https://www.alpine-code.com/).
