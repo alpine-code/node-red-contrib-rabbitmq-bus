@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-rabbitmq-bus-ac",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "RabbitMQ Bus for Node-RED ",
     "main": "index.js",
     "scripts": {

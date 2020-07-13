@@ -11,6 +11,7 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
             try {
                 msg.ack(msg.payload.error);
+                status.clear(node);
             } catch (err) {
                 node.error(err.message, msg);
                 status.error(node, err.message);
