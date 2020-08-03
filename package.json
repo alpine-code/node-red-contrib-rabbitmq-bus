@@ -1,5 +1,5 @@
 {
-    "name": "node-red-contrib-rabbitmq-bus-ac",
+    "name": "@alpine-code/node-red-contrib-rabbitmq-bus",
     "version": "0.0.2",
     "description": "RabbitMQ Bus for Node-RED ",
     "main": "index.js",
@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/alpine-code/node-red-contrib-rabbitmq-bus.git"
     },
-    "author": "alpine-code",
+    "author": "ilzenzo",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/alpine-code/node-red-contrib-rabbitmq-bus/issues"
