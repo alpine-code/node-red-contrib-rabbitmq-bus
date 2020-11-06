@@ -10,7 +10,7 @@ module.exports = function (RED) {
         // TRIGGER ON INCOMING MESSAGE
         node.on('input', function (msg) {
             try {
-                msg.ack(msg.payload.error);
+                msg.ack(msg.error);
                 status.clear(node);
             } catch (err) {
                 node.error(err.message, msg);

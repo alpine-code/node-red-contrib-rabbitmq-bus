@@ -1,6 +1,6 @@
 {
     "name": "@alpine-code/node-red-contrib-rabbitmq-bus",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "description": "RabbitMQ Bus for Node-RED ",
     "main": "index.js",
     "scripts": {
